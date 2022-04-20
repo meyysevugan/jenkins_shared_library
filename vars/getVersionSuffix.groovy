@@ -1,9 +1,9 @@
 def call(Map config) {
     node {
-        if (config.isReleaseCandidate) {
-            return config.rcNumber
-        } else {
-            return config.rcNumber + '+ci.' + env.BUILD_NUMBER
-        }
+         if (params.RC) {
+        return env.VERSION_RC
+    } else {
+        return env.VERSION_RC + '+ci.' + env.BUILD_NUMBER
+    }
     }
 }
