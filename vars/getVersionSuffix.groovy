@@ -1,9 +1,8 @@
-def call(Map config) {
-    node {
-         if (params.RC) {
-        return env.VERSION_RC
+String getVersionSuffix(Map config){
+
+    if (config.isReleaseCandidate) {
+        return config.rcNumber
     } else {
-        return env.VERSION_RC + '+ci.' + env.BUILD_NUMBER
-    }
+        return env.rcNumber + '+ci.' + env.BUILD_NUMBER
     }
 }
