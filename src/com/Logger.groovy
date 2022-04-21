@@ -10,3 +10,4 @@ def warn(String message){
 def debug(String message){
     echo "The log level is ${message}"
 }
+return this
