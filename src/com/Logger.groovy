@@ -1,4 +1,4 @@
-
+#!/usr/bin/env groovy
 def info(String message){
     echo "The message is ${message}"
 }
